@@ -16,7 +16,7 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/serguros';
 } else {
-    //   urlDB = 'mongodb+srv://basemdb:Base19!nuevo@cluster0-21tuj.mongodb.net/cafe';
+    urlDB = 'mongodb+srv://basemdb:Base19!nuevo@cluster0-21tuj.mongodb.net/seguros-01';
 }
 
 // esta la invento yo
