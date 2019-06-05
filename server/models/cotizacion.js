@@ -15,7 +15,7 @@ let cotizacionSchema = new Schema({
     },
     vencimiento: {
         type: Date,
-        //required: [true, 'El ID referencia es un campo requerido']
+        required: [true, 'El Vencimiento de la cotización es un campo requerido']
     },
     estado: {
         type: Boolean,

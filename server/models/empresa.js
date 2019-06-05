@@ -12,22 +12,23 @@ let empresaSchema = new Schema({
     },
     rsoc: {
         type: String,
-        required: [true, 'La Razón social es un campo requerido']
+        required: [true, 'La Razón social es un campo requerido.']
     },
     cuit: {
         type: Number,
-        required: [true, 'El CUIT es un campo requerido']
+        required: [true, 'El CUIT es un campo requerido.']
     },
     idciiuu: {
         type: Number,
-        required: [true, 'El ID de CIIUU es un campo requerido']
+        required: [true, 'El ID de CIIUU es un campo requerido.']
     },
     masasalarial: {
         type: Number,
+        required: [true, 'La masa salarial es un campo requerido.']
     },
     capitas: {
         type: Number,
-
+        required: [true, 'El número de capitas es un campo requerido.']
     },
     alicuota: {
         type: Number,
