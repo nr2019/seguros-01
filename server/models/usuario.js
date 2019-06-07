@@ -31,7 +31,7 @@ let usuarioSchema = new Schema({
         required: [true, 'La contraseña es un campo requerido']
     },
     img: {
-        type: Number,
+        type: String,
         require: false,
     },
     role: {
