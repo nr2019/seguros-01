@@ -16,6 +16,10 @@ let paisSchema = new Schema({
         type: Boolean,
         default: true,
     },
+    img: {
+        type: String,
+        default: 'https://cdn.pixabay.com/photo/2017/11/12/03/14/emojis-2941416_960_720.png',
+    },
 });
 
 

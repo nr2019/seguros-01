@@ -11,7 +11,7 @@ const app = express();
 // GET
 /*****************************************************************/
 app.get('/grupo', function(req, res) {
-    Grupo.find({ estado: true }, 'id descripcion')
+    Grupo.find({ estado: true }, 'id descripcion img')
         .exec((err, grupo) => {
             if (err) {
                 return res.status(400).json({
@@ -39,6 +39,7 @@ app.post('/grupo', function(req, res) {
     let grupo = new Grupo({
         id: body.id,
         descripcion: body.descripcion,
+        img: body.img,
     });
     //  se graba en la base
     grupo.save((err, grupoDB) => {
@@ -63,7 +64,7 @@ app.post('/grupo', function(req, res) {
 app.put('/grupo/:id', function(req, res) {
 
     let id = req.params.id;
-    let body = _.pick(req.body, ['descripcion']);
+    let body = _.pick(req.body, ['descripcion', 'img']);
 
     Grupo.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, grupoDB) => {
 

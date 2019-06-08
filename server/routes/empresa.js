@@ -11,7 +11,7 @@ const app = express();
 // GET
 /*****************************************************************/
 app.get('/empresa', function(req, res) {
-    Empresa.find({ estado: true }, 'id idgrupo rsoc cuit idciiuu masasalarial capitas alicuota')
+    Empresa.find({ estado: true }, 'id idgrupo rsoc cuit idciiuu masasalarial capitas alicuota img')
         .exec((err, empresas) => {
             if (err) {
                 return res.status(400).json({
@@ -45,6 +45,7 @@ app.post('/empresa', function(req, res) {
         masasalarial: body.masasalarial,
         capitas: body.capitas,
         alicuota: body.alicuota,
+        img: body.img,
     });
     //  se graba en la base
     empresa.save((err, empresaDB) => {
@@ -69,7 +70,7 @@ app.post('/empresa', function(req, res) {
 app.put('/empresa/:id', function(req, res) {
 
     let id = req.params.id;
-    let body = _.pick(req.body, ['idgrupo', 'rsoc', 'cuit', 'idciiuu', 'masasalarial', 'capitas', 'alicuota']);
+    let body = _.pick(req.body, ['idgrupo', 'rsoc', 'cuit', 'idciiuu', 'masasalarial', 'capitas', 'alicuota', 'img']);
 
     Empresa.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, empresaDB) => {
 
